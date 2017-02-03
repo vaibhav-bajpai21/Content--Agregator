@@ -1,0 +1,94 @@
+{% load static %}
+
+<html>
+	<head>
+			<link rel="stylesheet" type="text/css" href="{%  static '../static/css/profile_company.css' %} ">
+            <header>
+			
+				<ul class="nav">
+                      <li><a class="nav_left" href="{% url 'registration:home' %}">Home</a></li>
+				   <li><a class="nav_left"href="{% url 'registration:Search Job' %}">Search</a></li>
+				  
+				  
+                    {% if flag == "on" %}
+                        <li class="nav_right"><a href="">login</a>
+                      <ul class="dropdown">
+                      <li ><a href="{% url 'registration:login company' %}">Company</a></li>
+                      <li ><a href="{% url 'registration:login User' %}"> Job seeker</a></li>
+
+                      </ul>
+                      <li class="nav_right"><a href="">Signup</a>
+                      <ul class="dropdown">
+                      <li><a href="{% url 'registration:registerCompany' %}">Company</a></li>
+                      <li><a href="{% url 'registration:registerUser' %}">Job seeker</a></li>
+                    {% endif %}
+                    {% if flag == "off" %}
+
+                        <li><a class="nav_right" href="{% url 'registration:logout' %}">logout</a> </li>
+                    {% endif %}
+                  </ul>
+
+				  
+				 
+				</ul>
+			
+			</header>
+	</head>
+	<body>
+   
+		<div class="nav2" >
+			<ul>
+             <p><a class="nav2_link"href="{% url 'registration:viewapplication' %}">Applications</a></p>
+             <p><a  class="nav2_link"href="{% url 'registration:updateuser' %}">Edit Profile</a></p>
+			 <p><a  class="nav2_link"href="{% url 'registration:jobstatus' %}">Job Status</a></p>
+            </ul>
+			</div>
+            {% if messages %}
+                         <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                         </ul>
+            {% endif %}
+			
+		</div>
+				
+	
+			<div class="info" >
+			<h2>User Name : {{ user.user_name }}</h2>
+            <div class="personal">
+            	<h3>Personal Details</h3>
+                <p>First Name : {{ user.first_name }}<p>
+                <p>Last Name : {{ user.last_name }}<p>
+            </div>
+            <div class="contact">
+            	<h3>Contact Details</h3>
+                <p>Email Id: {{ user.email_id }}<p>
+                <p>Address : {{ user.address }}<p>
+                <p>Contact Number : {{ user.contact_number }}<p>
+                
+            </div>
+            <div class="official">
+            	<h3>Official Details </h3>
+                <p>Website Linked : <a href="{{user.website_linked }}" target="_blank">{{ user.website_linked }}</a></p>
+                <p>User Introduction : {{ user.user_introduction|safe }}</p>
+            </div>
+			</div>
+	</div>
+		
+		<div class="right">
+    <div class="img1">
+      <img class="image1" src="{% static './image/add1.png' %}" >
+    </div>
+    <div class="img2">
+      <img class="image1" src="{% static './image/add2.png' %}" >
+    </div>
+    <div class="img2">
+      <img class="image1" src="{% static './image/add3.png' %}" >
+    </div>
+			
+
+	
+		
+ </body>
+</html>

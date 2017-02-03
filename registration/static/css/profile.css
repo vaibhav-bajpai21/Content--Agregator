@@ -1,0 +1,202 @@
+				@import 'https://fonts.googleapis.com/css?family=Roboto:400,500,700';
+				body
+				{
+					margin:0;
+					background-color:#e1e3e4;
+				
+		
+				}
+				.nav
+				{
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					overflow: hidden;
+					background-color:black ;
+					cursor: pointer;
+
+				}
+
+				li {
+					float: left;
+					font-size:1em;
+					 z-index:1;
+					padding:1% 2% 1% 2%;
+				}
+
+				li:hover
+				{
+					background-color:grey;
+				}
+				li:active
+				{
+					background-color:red;
+					
+				}
+
+				li a 
+				{
+					display: block;
+					color:#A9A9A9;
+				    z-index:1;
+					 text-decoration: none;
+				}
+
+				li a:hover:not(.active)
+				{
+					color:white;
+				}
+
+				
+				
+				li ul.dropdown
+				{
+
+				background-color: black;
+				display: none;
+				position: absolute;
+				color: white;
+				font-family: serif;
+				font-size:1em;
+				width:auto;
+				padding:1% 0% 1% 1%;
+				margin-top:1%;
+				 z-index:1;
+				 margin-left:-1%;
+				}
+
+
+				li:hover ul.dropdown
+				{
+				background-color: black;
+				display:block;
+				z-index:50;
+				color:#fff;
+				margin-top:1%;
+				right:2px;
+				}
+
+				.nav_left
+				{
+					float:left;
+				}
+
+				.nav_right
+				{
+					float:right;
+					padding:1%;
+					
+				}
+				.left_text
+				{
+					width: 20%;
+					float: left;
+					clear: right;
+					border-right: 1px solid black;
+					padding: 2% 0% 2% 2%;
+					height: 100%;
+					background-color:#B0BEC5;
+				}
+				.text
+				{
+					padding-left:25%;
+					line-height: 250%;
+					font-size:1.5em;
+				}
+				ul.messages 
+				{
+				background-color: white;
+				color: red;
+				font-family: monospace;
+				width: 100%;
+
+				}
+				form
+				{
+					width:50%;
+					float:left;
+					clear:right;
+					margin-top:5%;
+					font-family:verdana;
+				}
+				.advertisement
+				{
+					width:23%;
+					float:left;
+				}
+				img
+				{
+					height:40%;
+					width:75%;
+					padding-top:10%;
+					padding-left:20%;
+					z-index:-1;
+					opacity:.8;
+				}
+				
+				img:hover
+				{   
+					.hovertext
+					{    
+						<img class="add" src="{% static './image/logo1text.png' %}" >
+					}
+				}
+				p
+					{
+
+					 text-align: center;
+					 font-size: 1.em;
+					 font-family: verdana;
+
+					}
+			form input.submit
+					{   
+				  background: linear-gradient(#49708f, #293f50);
+				  border: 1px solid #49708f;
+				  color: #fff;
+				  cursor: pointer;
+				  font-weight: bold;
+				  float: left;
+				  padding: 1% 4% 2% 4%;
+				  margin-left: 40%;
+				  border-radius: 5%;
+						}
+			.right{
+					width:20%;
+					float:right;
+					background-color:#B0BEC5;
+					border-left:1px solid black;
+					height:108%;
+					display:block;
+				
+				}
+				
+				
+				.image1
+				{
+					width:30vmin;
+					width:35vmin;
+				padding-bottom:10%;
+				padding-left:8%;
+				height:25%;
+				
+				}
+
+				.image2
+				{
+					width:30vmin;
+					width:35vmin;
+				padding-bottom:20%;
+				padding-left:8%;
+				height:40vmin;
+				
+				}
+				.image3
+				{
+					width:30vmin;
+					width:35vmin;
+				padding-bottom:20%;
+				padding-left:8%;
+				
+				}
+				

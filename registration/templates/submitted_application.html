@@ -1,0 +1,103 @@
+{% load static %}
+
+<html>
+	<head>
+			<link rel="stylesheet" type="text/css" href="{%  static '../static/css/submitted_application.css' %} ">
+
+
+
+
+
+			<header>
+			<div>
+				<ul class="nav">
+				    <li><a class="nav_left" href="{% url 'registration:home' %}">Home</a></li>
+				   <li><a href="{% url 'registration:Search Job' %}">Search</a></li>
+				  
+				  
+                    {% if flag == "on" %}
+                        <li class="nav_right"><a href="">login</a>
+                      <ul class="dropdown">
+                      <li ><a href="{% url 'registration:login company' %}">Company</a></li>
+                      <li ><a href="{% url 'registration:login User' %}"> User</a></li>
+
+                      </ul>
+                      <li id="signup"><a href="">Signup</a>
+                      <ul class="dropdown">
+                      <li><a href="{% url 'registration:registerCompany' %}">Company</a></li>
+                      <li><a href="{% url 'registration:registerUser' %}">Job seeker</a></li>
+                    {% endif %}
+                    {% if flag == "off" %}
+                      <li><a class="nav_left" href="{% url 'registration:Job Submit' %}">Post a job</a></li>
+                        <li><a class="nav_right" href="{% url 'registration:profilecompany' %}">Profile</a></li>
+                        <li><a class="nav_right" href="{% url 'registration:logout' %}">Logout</a></li>
+                    {% endif %}
+
+                  </ul>
+
+				  </li>
+
+
+				</ul>
+			</div>
+			</header>
+	</head>
+	<body >
+    <div class="left_text">
+        <div class="text">
+        <div><h2>Genre</h2></div>
+
+        <div> Blog</div>
+        <div> Novel</div>
+        <div> Magzine</div>
+        <div> Editorial</div>
+      
+        <div> Short Story</div>
+        <div> Fiction</div>
+        </div>
+    </div>
+<div class="center_text">
+		
+                {% if messages %}
+                         <ul class="messages">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                         </ul>
+                    {% endif %}
+                {% for JobApplication in user %}
+
+
+                  
+                     <h3>Application Details</h3>
+                     <p><strong>Application submitted on job detail : </strong>{{ JobApplication.details|safe }}</p>
+                     <p><strong>User Name : </strong>{{ JobApplication.user_name }}</p>
+                     <p><strong>Application :</strong> {{ JobApplication.application_text|safe }}<p>
+                     <p><strong>Email Id User:</strong> {{ JobApplication.email_user }}</p>
+
+                  
+                  <div class="s">
+                     <p><strong>Pay Expected: </strong>{{ JobApplication.pay_expected }}<p>
+                  </div>
+                    <a href="{% url 'registration:confirmjob' JobApplication.application_text %}"><p><strong> Accept</strong></p></a>
+
+                 {% endfor %}
+
+
+		</div>
+      <div class="right">
+    <div class="img1">
+      <img class="image1" src="{% static './image/add1.png' %}" >
+    </div>
+    <div class="img2">
+      <img class="image1" src="{% static './image/add2.png' %}" >
+    </div>
+    <div class="img2">
+      <img class="image1" src="{% static './image/add3.png' %}" >
+    </div>
+    
+  
+
+
+ </body>
+</html>
